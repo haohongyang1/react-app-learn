@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import JsxTest from './JsxTest'
+import CompType from './CompType'
+import StateTest from './StateTest'
+import CartSample from './CartSample'
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        {/**自定义组件开头大写 */}
+        <JsxTest />
+        {/** 组件类型：函数型组件 */}
+        {/* <CompType></CompType> */}
+        <StateTest></StateTest>
+        <CartSample></CartSample>
+      </div>
+    )
+  }
 }
 
 export default App;
