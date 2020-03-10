@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import {Button} from 'antd'
 
+import CommonList from './CommonList'
 // 函数型组件：购物车组件
 function Cart (props) {
     return (
@@ -81,25 +83,32 @@ export default class CartSample extends Component {
         const goods = this.state.goods.map(good => (
             <div>
                 <li key={good.id}>{good.name}</li>
-                <button onClick={() => this.addToCart(good)}>加购</button>
+                <Button type="primary" onClick={() => this.addToCart(good)}>加购</Button>
             </div>
         ))
         return (
             <div>
                 {/* 条件语句 */}
-                {this.state.title && <h1>{this.state.title}</h1>}
+                {/* {this.state.title && <h1>{this.state.title}</h1>} */}
                 {/* 循环语句 */}
-                <ul>{goods}</ul>
-                {/* <ul>
-                    {this.state.goods.map(good => <li key={good.id}>{good.name}</li>)}
-                </ul> */}
+                {/* <ul>{goods}</ul> */}
+                <ul>
+                    {this.state.goods.map(good => (
+                        <div key={good.id}>
+                            <li key={good.id} style={{display: "inline-block"}}>{good.name}</li>
+                            <Button type="primary">加购</Button>
+                        </div>
+                    ))}
+                </ul>
                 {/* 事件处理 */}
                 <input
                 value={this.state.name}
                 onChange={e => this.inputChange(e)} />
-                <button onClick={this.addGoods}>添加</button>
+                <Button type="primary" onClick={this.addGoods}>添加</Button>
                 <h1>购物车</h1>
                 <Cart data={this.state.carts} onSelect={this.onSelect}></Cart>
+                <h1>评论区</h1>
+                <CommonList></CommonList>
             </div>
         )
     }

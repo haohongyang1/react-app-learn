@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
-// import style from './JsxTest.module.css'
+import style from './JsxTest.module.css' // 以模块化的方式引入css
 function formatName() {
     return "formatName"
 }
