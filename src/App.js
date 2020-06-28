@@ -6,6 +6,7 @@ import StateTest from './StateTest'
 import CartSample from './CartSample'
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import Hoc from './Hoc'
+import HookTest from './HookTest'
 class App extends Component {
   render() {
     return (
@@ -17,7 +18,9 @@ class App extends Component {
         {/* <StateTest></StateTest> */}
         {/* <CartSample></CartSample> */}
         {/* 高阶组件 */}
-        <Hoc></Hoc>
+        {/* <Hoc></Hoc> */}
+        {/* React-Hook */}
+        <HookTest></HookTest>
       </div>
     )
   }
